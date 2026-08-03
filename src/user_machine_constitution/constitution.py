@@ -14,6 +14,7 @@ REQUIRED_PATHS = [
     "epistemics.uncertainty", "epistemics.sources", "epistemics.no_fabrication",
     "execution.tool_use", "execution.completion", "execution.failure",
     "autonomy.may_proceed", "autonomy.always_confirm", "autonomy.never_without_new_instruction",
+    "autonomy.default_on_ambiguity",
     "memory.durable", "memory.procedures", "memory.temporary", "memory.corrections", "memory.forgetting",
     "privacy.secrets", "privacy.least_privilege", "privacy.external_data",
     "amendments.proposer", "amendments.ratification", "amendments.changelog", "amendments.review_cadence",
