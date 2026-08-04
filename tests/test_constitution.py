@@ -32,6 +32,12 @@ class ConstitutionTests(unittest.TestCase):
         errors = validate_constitution(data, text)
         self.assertTrue(any("public_external_write" in error for error in errors))
 
+    def test_missing_ambiguity_default_fails_before_rendering(self):
+        data, text = load_constitution(ROOT / "examples/sample-constitution.toml")
+        del data["autonomy"]["default_on_ambiguity"]
+        errors = validate_constitution(data, text)
+        self.assertIn("missing clause: autonomy.default_on_ambiguity", errors)
+
     def test_private_material_is_flagged(self):
         data, text = load_constitution(ROOT / "examples/sample-constitution.toml")
         sensitive = "pass" + "word=not-a-real-secret"
